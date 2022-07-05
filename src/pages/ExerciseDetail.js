@@ -22,8 +22,8 @@ useEffect(() => {
       setExerciseDetail(exersiseDetailData)
 
 
-      const exerciseVideosData = await fetchData(`${youtubeSearchUrl}/search?=${exerciseDetail.name}`, youtubeOptions)
-      setExerciseVideos(exerciseVideosData)
+      const exerciseVideosData = await fetchData(`${youtubeSearchUrl}/search?query=${exersiseDetailData.name} exercise`, youtubeOptions);
+      setExerciseVideos(exerciseVideosData.contents);
     }
   fetchExercisesData()
 })
